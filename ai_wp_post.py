@@ -45,6 +45,10 @@ category_name_to_default_image = {
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
+print("====== Render環境の環境変数チェック ======")
+print("WORDPRESS_USERNAME:", os.getenv("WORDPRESS_USERNAME"))
+print("WORDPRESS_APP_PASSWORD:", os.getenv("WORDPRESS_APP_PASSWORD")[:4] + "****")
+
 def get_og_image(url):
     try:
         html = requests.get(url, timeout=10).text
